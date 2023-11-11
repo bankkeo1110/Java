@@ -60,7 +60,15 @@ pipeline {
 
     post {
         always {
-            Cleanup, sending notifications
+            always {
+        // Cleanup action (example: deleting temporary files)
+        // Replace this with actual cleanup commands
+        echo 'Performing cleanup actions'
+
+        // Sending notifications (example: sending an email)
+        // Replace this with actual notification commands
+        echo 'Sending notifications'
+    }
         }
     }
 }
