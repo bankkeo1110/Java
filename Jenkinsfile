@@ -30,8 +30,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Run your tests here
-                    // Example: sh 'mvn test'
+                    mvn test
                 }
             }
         }
@@ -61,8 +60,7 @@ pipeline {
 
     post {
         always {
-            // Actions to perform after the pipeline execution
-            // Example: Cleanup, sending notifications
+            Cleanup, sending notifications
         }
     }
 }
