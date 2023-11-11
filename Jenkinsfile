@@ -60,7 +60,7 @@ pipeline {
 
     post {
         always {
-            always {
+       
         // Cleanup action (example: deleting temporary files)
         // Replace this with actual cleanup commands
         echo 'Performing cleanup actions'
@@ -69,6 +69,6 @@ pipeline {
         // Replace this with actual notification commands
         echo 'Sending notifications'
     }
-        }
+        
     }
 }
