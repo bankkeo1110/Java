@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define environment variables
-        DOCKER_IMAGE = 'nguyentinh215/helloworld_IMAGE' // Docker Hub username and image name
+        DOCKER_IMAGE = 'nguyentinh215/helloworld_image' // Docker Hub username and image name
         DOCKER_REGISTRY_CREDENTIALS = 'Docker' // Jenkins credential ID for Docker Hub
     }
 
