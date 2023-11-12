@@ -17,20 +17,7 @@ pipeline {
                 }
             }
         }
-        stage('Initialize') {
-            steps {
-                script {
-                    // Define dockerHome using the tool directive
-                    def dockerHome = tool 'Docker'
-                    // Set the PATH environment variable
-                    env.PATH = "${dockerHome}/bin:${env.PATH}"
-                    // Set DOCKER_HOST to point to your Docker daemon
-                    // Replace <Your_Windows_Machine_IP> with the actual IP address
-                    env.DOCKER_HOST = 'tcp://localhost:2375'
-
-                }
-            }
-        }
+ 
 
         stage('Build') {
             steps {
