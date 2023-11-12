@@ -8,15 +8,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Get code from the GitHub repository
-                checkout scm
-                dir('helloworld') {
-                    // All subsequent commands will be run inside the 'helloworld' directory
-                }
-            }
-        }
+        
  
 
         stage('Build') {
