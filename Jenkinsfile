@@ -17,7 +17,16 @@ pipeline {
                 }
             }
         }
-
+        stage('Initialize') {
+            steps {
+                script {
+                    // Define dockerHome using the tool directive
+                    def dockerHome = tool 'Docker'
+                    // Set the PATH environment variable
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                }
+            }
+        }
 
         stage('Build') {
             steps {
