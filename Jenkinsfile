@@ -20,8 +20,10 @@ pipeline {
         stage('Initialize') {
             steps {
                 script {
-                     // Use a shell step to modify PATH
-                    sh "export PATH=${DOCKER_HOME}/bin:$PATH"
+                    // Define dockerHome using the tool directive
+                    def dockerHome = tool 'Docker'
+                    // Set the PATH environment variable
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
                 }
             }
         }
