@@ -44,10 +44,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // First, remove the existing container if it exists
-                    sh "docker rm -f helloworld_app || true"
-                    // Then run the new container
-                    sh "docker run -d --name helloworld_app -p 8081:8080 ${DOCKER_IMAGE}"
+                  
+                     // First, remove the existing container if it exists
+                    bat "docker rm -f helloworld_app || true"
+
+                      // Pull the latest Docker image and run it
+                    bat "docker pull $DOCKER_IMAGE"
+                   
+                    bat "docker run -d --name helloworld_app -p 8081:8080 $DOCKER_IMAGE"
+                    // The '-p 8081:8080' maps port 8080 inside the container to port 8081 on your host
                 }
             }
         }
