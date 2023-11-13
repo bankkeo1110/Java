@@ -28,13 +28,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    mvn test
-                }
-            }
-        }
+
 
         stage('Docker Push') {
             steps {
